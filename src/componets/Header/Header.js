@@ -21,7 +21,7 @@ const Header = () => {
                             <Link to="/">Home</Link>
                             <Link to="/about">About</Link>
                             <Link to="/appointment">Appointment</Link>
-                            <Link to="/dashboard">Dashboard</Link>
+                            <Link to="/dashboard">Admin Dashboard</Link>
                             <Link to="/contactus">Contact Us</Link>
                             <span style={{ color: "white", paddingTop: "10px" }}>{user ? user.displayName : user.email}</span>
                             {user?.email ? (<button className="btn btn-danger" onClick={logOut}>Logout</button>)

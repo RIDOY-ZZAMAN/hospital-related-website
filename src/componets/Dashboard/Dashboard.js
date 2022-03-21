@@ -1,11 +1,16 @@
 import React from 'react';
+import './Dashboard.css'
+import LeftSideBar from './LeftSideBar';
+import ManageReviews from './ManageReviews';
+
+
 
 const Dashboard = () => {
     return (
-        <div>
-            <h2>This is Admin Dashboard</h2>
-
-        </div>
+        <div className='dashboard'>
+            <LeftSideBar></LeftSideBar>
+            <ManageReviews></ManageReviews>
+        </div >
     );
 };
 

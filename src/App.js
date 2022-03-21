@@ -19,8 +19,10 @@ import About from './componets/About/About';
 import Appointment from './componets/Appointment/Appointment';
 import AdminRoute from './componets/Login/AdminRoute/AdminRoute';
 import Dashboard from './componets/Dashboard/Dashboard';
+import ManageReviews from './componets/Dashboard/ManageReviews';
 
 function App() {
+
   return (
     <div className="App">
       <AuthProvider>
@@ -49,6 +51,7 @@ function App() {
               <Dashboard></Dashboard>
 
             </AdminRoute>
+
 
             <Route path="*">
               <NotFound></NotFound>

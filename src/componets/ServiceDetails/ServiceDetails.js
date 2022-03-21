@@ -9,7 +9,7 @@ const ServiceDetails = () => {
     const [singleService, setSingleService] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://boiling-falls-46123.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServiceDetails(data.services))
 
@@ -36,6 +36,7 @@ const ServiceDetails = () => {
                                 <h5 className="card-title">{singleService?.title}</h5>
                                 <p className="card-text text-start ms-4">{singleService?.description}</p> <br />
                                 <h2>Cost: {singleService?.cost}</h2>
+                                <button className='mt-5'>Purchase This Service</button>
 
                             </div>
                         </div>

@@ -23,12 +23,13 @@ const Home = () => {
     const [doctors, setDoctors] = useState([]);
     const [reviews, setReviews] = useState([]);
 
-
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(1);
     const size = 3;
+
+
     useEffect(() => {
-        fetch(`http://localhost:5000/services?page=${page}&&size=${size}`)
+        fetch(`https://boiling-falls-46123.herokuapp.com/services?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data.services);
@@ -41,7 +42,7 @@ const Home = () => {
     }, [page])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/doctors?page=${page}&&size=${size}`)
+        fetch(`https://boiling-falls-46123.herokuapp.com/doctors?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setDoctors(data.doctors);
@@ -55,7 +56,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://boiling-falls-46123.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
 
@@ -110,6 +111,15 @@ const Home = () => {
                                 <img height="100%" width="100%" src={doctor.img} alt="" />
                                 <h5 className='p-3'>{doctor.name}</h5>
                                 <h6>{doctor.specialty}</h6>
+
+                                <Rating
+                                    initialRating={reviews?.map(review => review?.rating)}
+                                    emptySymbol="far fa-star icon-color"
+                                    fullSymbol="fas fa-star icon-color"
+
+                                >
+
+                                </Rating>
 
 
 
@@ -260,7 +270,7 @@ const Home = () => {
                 {/*----------------- extra section 2 end------------------- */}
 
 
-                <div className="row my-4">
+                <div className="row my-5">
                     <h4 className="my-4"><span className="border-bottom border-3 pb-1 text-danger">Make An Appoinment</span></h4>
                     <div className="col-lg-4 border col-sm-12">
                         <i className="far fa-clock mb-3"></i>  <span className="fs-5 fw-bold" >Woring Time</span> <br />

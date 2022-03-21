@@ -17,7 +17,7 @@ const Review = () => {
         const review = reviewRef.current.value;
         const cutomerReview = { name, email, review, rating: rating }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://boiling-falls-46123.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,6 +38,7 @@ const Review = () => {
     }
     return (
         <div>
+            <h3 className='my-4'>Please Give Us Your Valuable Review</h3>
             <form onSubmit={handleRatingSumbit}>
                 <h5>Your Name</h5>
                 <input style={{ width: "70%", height: '30px' }} type="text" ref={nameRef} name="" id="" />
