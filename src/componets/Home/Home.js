@@ -148,7 +148,7 @@ const Home = () => {
                 </div>
 
 
-                {/*----------------- extra section 1 start------------------- */}
+                {/*----------------- extra section  start------------------- */}
 
                 <div className="row my-5">
                     <div className="col-lg-6 col-sm-12 text-start">
@@ -211,10 +211,10 @@ const Home = () => {
 
 
 
-                {/*----------------- extra section 1 end------------------- */}
+                {/*----------------- extra section  end------------------- */}
 
 
-                {/*----------------- extra section 2 start------------------- */}
+                {/*----------------- extra section  start------------------- */}
                 <div>
                     <h3 className="text-start mt-5">A Good Word Means a Lot</h3>
                     <h1 className="text-start text-success">Patient testimonials
@@ -241,7 +241,7 @@ const Home = () => {
                     className="mySwiper"
                 >
 
-                    {
+                    {reviews.length === 0 ? <h4>Loading...</h4> :
                         reviews.map(review =>
                             <SwiperSlide>
                                 <div className="col">
@@ -267,7 +267,7 @@ const Home = () => {
 
                 </Swiper>
 
-                {/*----------------- extra section 2 end------------------- */}
+                {/*----------------- extra section  end------------------- */}
 
 
                 <div className="row my-5">

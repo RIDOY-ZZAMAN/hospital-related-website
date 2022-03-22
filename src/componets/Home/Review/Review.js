@@ -17,7 +17,7 @@ const Review = () => {
         const review = reviewRef.current.value;
         const cutomerReview = { name, email, review, rating: rating }
 
-        fetch('https://boiling-falls-46123.herokuapp.com/reviews', {
+        fetch('https://boiling-falls-46123.herokuapp.com/pendingreviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,12 +38,12 @@ const Review = () => {
     }
     return (
         <div>
-            <h3 className='my-4'>Please Give Us Your Valuable Review</h3>
+            <h3 className='my-4'>Please Give Us <span className="text-danger"> Your Valuable Review</span>  </h3>
             <form onSubmit={handleRatingSumbit}>
                 <h5>Your Name</h5>
-                <input style={{ width: "70%", height: '30px' }} type="text" ref={nameRef} name="" id="" />
+                <input placeholder='Your Name' style={{ width: "50%", height: '30px', borderRadius: "5px" }} type="text" ref={nameRef} name="" id="" />
                 <h5>Your Email</h5>
-                <input style={{ width: "70%", height: '30px' }} type="text" ref={emailRef} name="" id="" />
+                <input placeholder='Your Email' style={{ width: "50%", height: '30px', borderRadius: "5px" }} type="text" ref={emailRef} name="" id="" />
                 <h5>Your Ratings</h5>
                 {[...Array(5)].map((star, i) => {
                     const ratingValue = i + 1;
@@ -68,9 +68,9 @@ const Review = () => {
                     )
                 })} <br />
 
-                <textarea ref={reviewRef} name="" id="" style={{ width: "70%", height: '150px' }} placeholder="Please Write your Review Here"></textarea> <br />
+                <textarea ref={reviewRef} name="" id="" style={{ width: "50%", height: '150px' }} placeholder="Please Write your Review Here"></textarea> <br />
 
-                <button type="submit">Submit</button>
+                <button className='btn btn-primary' type="submit">Submit</button>
 
             </form>
 
